@@ -2,27 +2,27 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f8f8f8;
 }
 
 .search-bar {
-  margin: 25px 0 0;
-  margin-left: 82%;
-  width: 250px;
+  margin-top: 25px;
+  text-align: center;
 }
 
 .search-bar input {
-  padding: 12px 0 12px 19px;
-  outline: 0;
-  border-radius: 10px;
+  padding: 12px 20px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 20px;
   font-size: 16px;
-  border: 0.8px solid #f802027f;
-  /* box-shadow: 0 0 8px #f802024f; */
+  transition: border-color 0.3s ease;
 }
 
-.search-bar input:hover {
-border: 0.8px solid #fff;
-  box-shadow: 0 0 8px 2px #f802024f;
+.search-bar input:focus {
+  border-color: #ff0000;
 }
+
 .buttons {
   margin: 20px auto;
   text-align: center;
@@ -30,60 +30,111 @@ border: 0.8px solid #fff;
 
 .buttons button {
   background-color: #ff0000;
-  /* background-color: #4CAF50; */
   border: none;
   color: white;
   padding: 10px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin: 4px 20px;
+  margin: 0 10px;
   cursor: pointer;
-  border-radius: 50px;
-  outline: 0;
-  border: 0;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #ff0000a5;
-  transition: background-color 0.8s ease;
+.buttons button:hover {
+  background-color: #ff5555;
 }
 
 .clothing-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  animation: fadeIn 0.5s forwards;
+  margin-top: 20px;
 }
 
 .clothing-item {
   width: 250px;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #cccccc70;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
-  box-shadow: inset 0 0 4px #ccccccad;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .clothing-item:hover {
-  box-shadow: 1px 1px 8px 2px #0000005c, -1px -1px 8px 2px #00000000;
   transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .clothing-image {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-@keyframes fadeIn {
+.hero {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.hero {
+  position: relative;
+  height: 400px;
+  background: url(./preview1.jpg) center / cover no-repeat;
+  overflow: hidden;
+
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: absolute;
+  top: 66%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 0;
+  opacity: 0.8;
+  animation: fadeInUp 1.5s ease infinite;
+}
+
+@keyframes fadeInUp {
   from {
-    opacity: 0;
+    /* opacity: 0; */
+    transform: translateY(20px);
   }
   to {
-    opacity: 1;
+    /* opacity: 1; */
+    transform: translateY(0);
   }
 }
