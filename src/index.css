@@ -92,7 +92,7 @@ body {
 .hero {
   position: relative;
   height: 400px;
-  background: url(./preview1.jpg) center / cover no-repeat;
+  background: url('./preview1.jpg') center / cover no-repeat;
   overflow: hidden;
 
 }
